@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>signup</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='signup.css')}}">
+
+</head>
+<body>
+	<div align="center">
+	<h1>SIGN UP!</h1>
+	<form action="/signup" method= "POST">
+		<h3>please enter your name</h3>
+		<input type="text" name="name" placeholder="Name">
+		<br>
+		<h3>please enter your username</h3>
+		<input type="text" name="username" placeholder="Username">
+		<br>
+		<h3>enter a password</h3>
+		<input type="password" name="password" placeholder="Password">
+		<br>
+		<h3>repeat your password</h3>
+		<input type="password" name="repeat" placeholder="Repeat Password">
+		<br>
+		<input type="submit" value="submit">
+	</form>
+</div>
+
+
+</body>
+</html>
