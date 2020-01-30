@@ -15,5 +15,6 @@ class Image(Base):
 	id = Column(Integer, primary_key = True)
 	user_id = Column(Integer)
 	url = Column(String)
+	description = Column(String)
 
 

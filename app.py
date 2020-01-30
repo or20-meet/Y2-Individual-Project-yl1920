@@ -31,12 +31,28 @@ def login():
 		return render_template('login.html')
 
 	elif not(get_user_by_username(request.form['username'])==None) and get_user_by_username(request.form['username']).password == request.form['password']:
-		return render_template('brouse.html')
+		return render_template('user.html', user = get_user_by_username(request.form['username']))
+	else:
+		return render_type('login.html')
 
 
 @app.route("/brouse")
 def brouse():
 	return render_template("brouse.html")
+
+@app.route("/user")
+def user(user):
+	images = images_by_id(id = user.id)
+	return render_template("user.html", images = images, current_user = user)
+
+@app.route("/upload", methods=['GET', 'POST'])
+def upload():
+	if request.method == 'GET' :
+		return render_template(upload.html)
+	
+####################take care of me pls
+
+
 
 
 if __name__ == '__main__':

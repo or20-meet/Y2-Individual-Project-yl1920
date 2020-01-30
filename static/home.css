@@ -3,9 +3,24 @@ body{
 	color: white;
 
 }
-#link{
+.link{
 	color: white;
+	text-decoration-line: none;
+	font-size: 60px;
+	font-family: arial;
+	font-weight: 2px;
 }
-#link:hover{
-	color: black;
+.link:hover{
+	color: white;
+	text-decoration-line: none;
+}
+
+div{
+	margin: 50px;
+
+}
+
+img{
+	height: 200%
+	width:200%;
 }

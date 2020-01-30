@@ -24,8 +24,8 @@ def get_user_by_id(id):
 def get_user_by_username(username):
 	return session.query(User).filter_by(username=username).first()
 
-def add_image(user_id, url):
-	new_image = Image(user_id = user_id, url=url) 
+def add_image(user_id, url, d):
+	new_image = Image(user_id = user_id, url=url, description=d) 
 	session.add(new_image)
 	session.commit()
 
