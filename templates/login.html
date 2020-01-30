@@ -2,8 +2,11 @@
 <html>
 <head>
 	<title>login</title>
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='login.css')}}">
+	
 </head>
 <body>
+	<div align="center">
 	<h1>LOGIN!</h1>
 	<form action="/login" method="POST">
 		<h3>username</h3>
@@ -16,8 +19,8 @@
 		<br>
 		<input type="submit" name="submit">
 
-		
 	</form>
+</div>
 
 </body>
 </html>

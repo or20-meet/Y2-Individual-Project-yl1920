@@ -29,16 +29,19 @@ def signup():
 def login():
 	if request.method == 'GET':
 		return render_template('login.html')
-
-	elif not(get_user_by_username(request.form['username'])==None) and get_user_by_username(request.form['username']).password == request.form['password']:
-		return render_template('user.html', user = get_user_by_username(request.form['username']))
 	else:
-		return render_type('login.html')
+		username=request.form['username']
+		password = request.form['password']
+		if not(get_user_by_username(username)==None) and get_user_by_username(username).password == password:
+			return render_template('user.html', user = get_user_by_username(username))
+		else:
+			return render_template('login.html')
 
 
 @app.route("/brouse")
-def brouse():
-	return render_template("brouse.html")
+def brouse(user):
+	images = get_all_images()
+	return render_template("brouse.html", images=images)
 
 @app.route("/user")
 def user(user):
